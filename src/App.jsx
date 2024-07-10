@@ -108,11 +108,11 @@ function App() {
         <textarea cols="50" rows="5" disabled={true} value={outText} placeholder=' Your Ouput comes here' className='m-5 rounded-lg bg-slate-400' />
 
         <p className="bg-grey-200 text-emerald-600 h-4">Operation : {operation}</p>
-        <div className='m-14 mt-16 grid grid-cols-3 gap-5 text-center'>
+        <div className='m-14 mt-16 grid gap-5 sm:grid-cols-1 md:grid-cols-3 grid-cols-2 text-center'>
           {buttons.map((item) => (
             <>
               <div onMouseEnter={() => setOperation(item.definition)} onMouseLeave={() => setOperation('N/A')}>
-                <button disabled={!inText} className="min-w-[120px] md:min-w-[200px] text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onClick={() => { setOutText(handleOperation(item.name)) }}>{item.name}</button>
+                <button disabled={!inText} className="min-w-[130px] md:min-w-[200px] text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 disabled:opacity-50 disabled:bg-gray-500 disabled:cursor-not-allowed" onClick={() => { setOutText(handleOperation(item.name)) }}>{item.name}</button>
               </div>
             </>
           ))}
